@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="listen.png" type="image/x-icon">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <title>Song</title>
+    <link rel="stylesheet" href="song.css">
+    
+</head>
+<body>
+    <div id="main">
+        <div id="card">
+          
+            <div id="top">
+                <i class="ri-arrow-left-s-line" id="home"></i>
+                <h2>Music Player</h2>
+                <i class="ri-menu-line"></i>
+               
+            </div>
+          
+               <div id="image">
+                <img src="https://t4.ftcdn.net/jpg/05/93/48/67/360_F_593486760_vJiyGDLBgTh8Ye7XcnW7VFluhZu44aB4.jpg" alt="">
+               </div>
+               <audio  id="player" ></audio>
+               <div id="songDescription">
+                <h2>Iraaday</h2>
+                <h4>Abdul Haasan</h4>
+               </div>
+               <div id="controller">
+                <div id="rangeContainer">
+                    <input type="range" id="range" min="0" max="100" step="1" value="70">
+                </div>
+               <div id="controls">
+                <i class="ri-heart-fill" id="like"></i>
+                <i class="ri-skip-back-fill" id="back" onclick="backSong()"></i>
+                <i class="ri-play-fill" id="playPause"></i>
+                <i class="ri-skip-forward-fill" id="next" onclick="nextSong()"></i>
+                <i class="ri-music-2-fill"></i>
+               </div>
+               </div>
+        </div>
+    </div>
+    <script src="song.js"></script>
+</body>
+</html>
