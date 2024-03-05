@@ -19,12 +19,12 @@
             <div id="top">
                 <i class="ri-arrow-left-s-line" id="home"></i>
                 <h2>Music Player</h2>
-                <i class="ri-menu-line"></i>
+                <i class="ri-menu-line" id="songPlayList"></i>
                
             </div>
           
                <div id="image">
-                <img src="https://t4.ftcdn.net/jpg/05/93/48/67/360_F_593486760_vJiyGDLBgTh8Ye7XcnW7VFluhZu44aB4.jpg" alt="">
+                <img src="https://w0.peakpx.com/wallpaper/190/945/HD-wallpaper-colorful-paint-strokes-grunge-abstract-art-creative-abstract-splashes-grunge-backgrounds-abstract-backgrounds-thumbnail.jpg" alt="" id="imageMain">
                </div>
                <audio  id="player" ></audio>
                <div id="songDescription">
@@ -33,16 +33,28 @@
                </div>
                <div id="controller">
                 <div id="rangeContainer">
-                    <input type="range" id="range" min="0" max="100" step="1" value="70">
+                    <input type="range" id="range" min="0" max="100" step="0.5" value="0">
+                </div>
+                <div id="audioContainer">
+                    <i class="ri-volume-down-line"></i>
+                    <input type="range" id="audioRange" min="0" max="1" value="0.5" step="0.01" >
+                    <i class="ri-volume-up-line"></i>
                 </div>
                <div id="controls">
                 <i class="ri-heart-fill" id="like"></i>
                 <i class="ri-skip-back-fill" id="back" onclick="backSong()"></i>
                 <i class="ri-play-fill" id="playPause"></i>
                 <i class="ri-skip-forward-fill" id="next" onclick="nextSong()"></i>
-                <i class="ri-music-2-fill"></i>
+                <i class="ri-volume-mute-line" id="mute"></i>
                </div>
                </div>
+        </div>
+        <div id="playlist">
+            <div id="topEnd"><i class="ri-close-circle-line" id="cross"></i></div>
+            <h1 id="playlistHeading">Hit Songs</h1>
+            <p class="songName"><span>Bezzati - Khullar Ji</span></p>
+            <p class="songName"><span>Husnpari - UK Boy</span></p>
+            <p class="songName"><span>Iraaday - Abdul Haasan</span></p>
         </div>
     </div>
     <script src="song.js"></script>

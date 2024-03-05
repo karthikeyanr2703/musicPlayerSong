@@ -8,7 +8,7 @@
 body,html{
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
    
 }
 #main{
@@ -18,13 +18,66 @@ body,html{
    display: flex;
    align-items: center;
    justify-content: center;
+   position: relative;
+
     
+}
+#playlist{
+    width: 350px;
+    height: 517px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+   
+    background: #070f4e; 
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+#playlistHeading{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    user-select: none;
+}
+#playlist #topEnd{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+ 
+ cursor: pointer;
+ font-size: 25px;
+}
+.songName{
+    width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   cursor: pointer;
+   background-color: white;
+   color: black;
+   border-radius: 20px;
+   padding: 1px;
+  
+}
+.songName span{
+    margin: 5px;
 }
 #card{
     width: 350px;
     background: #070f4e; 
     color: white;
     border-radius: 20px;
+    display: none;
     
 }
 #card #top{
@@ -91,6 +144,10 @@ body,html{
     gap: 10px;
 
 }
+
+
+
+
 #controls{
     width: 100%;
     padding-left:18px;
@@ -114,7 +171,7 @@ body,html{
     appearance: none;
     height: 3px;
     border-radius: 10px;
-    background-color:white;
+    background: white;
     margin-top: 10px;
     margin-bottom: 8px;
    
@@ -128,9 +185,37 @@ body,html{
     background-color: black;
     width: 18px;
     height: 18px;
-    border: 2px solid white;
+    border: 3px solid white;
 
 }
+#audioContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+#audioContainer i{
+
+    color: white;
+    font-size: 30px;
+    padding: 5px;
+}
+#audioContainer #audioRange{
+    width: 150px;
+    height: 2px;
+    border-radius: 20px;
+    background:linear-gradient(to right , grey 0%,grey 50%,white 50%,white 100% );
+  }
+  #audioContainer #audioRange::-webkit-slider-thumb{
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: black;
+
+  }
 #controls i{
     font-size: 30px;
     cursor: pointer;
@@ -144,4 +229,8 @@ i#playPause{
     font-weight: 600;
     color: white;
     /* border: 2px solid blue; */
+}
+.red{
+    opacity: 0.7;
+    color: red;
 }
