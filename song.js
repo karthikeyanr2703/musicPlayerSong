@@ -27,10 +27,13 @@ let images = [
   "https://e1.pxfuel.com/desktop-wallpaper/673/493/desktop-wallpaper-paint-splash.jpg",
  
 ];
+
+
+
 let length = songs.length;
 songPlayList.addEventListener("click", function(){
     card.style.display = "none";
-    playlist.style.visibility = "";
+    playlist.style.display = "block";
     
 })
 cross.addEventListener("click", function(){

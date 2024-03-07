@@ -25,11 +25,8 @@ body,html{
 #playlist{
     width: 350px;
     height: 517px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
+  
+
    
     background: #070f4e; 
     color: white;
@@ -46,6 +43,9 @@ body,html{
     align-items: center;
     justify-content: center;
     margin: 10px;
+ 
+}
+#playlistHeading span{
     user-select: none;
 }
 #playlist #topEnd{
@@ -55,22 +55,37 @@ body,html{
     justify-content: flex-end;
  
  cursor: pointer;
- font-size: 25px;
+ font-size: 35px;
 }
-.songName{
+#playListGaana{
     width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: flex-start;
-   cursor: pointer;
-   background-color: white;
-   color: black;
-   border-radius: 20px;
-   padding: 1px;
-  
+    display: flex;
+    flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+gap: 10px;
+
+   
 }
-.songName span{
-    margin: 5px;
+
+#playListGaana div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+color: black;
+border-radius: 20px;
+}
+#playListGaana div i{
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 500;
+
+}
+#playListGaana div p{
+    letter-spacing: 1px;
+word-spacing: 0.5px;
 }
 #card{
     width: 350px;
