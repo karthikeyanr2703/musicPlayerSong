@@ -1,251 +1,256 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-body,html{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-   
+body,
+html {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
-#main{
-   width: 100%;
-   height: 100%;
-   background:linear-gradient(45deg,#2772db,#f5ebeb);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   position: relative;
+#main {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #2772db, #f5ebeb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#playlist {
+  width: 350px;
+  height: 517px;
 
-    
+  background: #070f4e;
+  color: white;
+  border-radius: 20px;
+  padding: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-#playlist{
-    width: 350px;
-    height: 517px;
+#playlistHeading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+#playlistHeading span {
+  user-select: none;
+}
+#playlist #topEnd {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  cursor: pointer;
+  font-size: 35px;
+}
+#playListGaana {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
   
-
-   
-    background: #070f4e; 
-    color: white;
-    border-radius: 20px;
-    padding: 10px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
-#playlistHeading{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
- 
-}
-#playlistHeading span{
-    user-select: none;
-}
-#playlist #topEnd{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
- 
- cursor: pointer;
- font-size: 35px;
-}
-#playListGaana{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-align-items: center;
-justify-content: flex-start;
-gap: 10px;
-
-   
 }
 
-#playListGaana div{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: white;
-color: black;
-border-radius: 20px;
-}
-#playListGaana div i{
-    cursor: pointer;
-    font-size: 22px;
-    font-weight: 500;
-
-}
-#playListGaana div p{
-    letter-spacing: 1px;
-word-spacing: 0.5px;
-}
-#card{
-    width: 350px;
-    background: #070f4e; 
-    color: white;
-    border-radius: 20px;
-    display: none;
-    
-}
-#card #top{
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-   justify-content: space-between;
-    gap: 30px;
+#playListGaana div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  color: black;
+  border-radius: 20px;
 }
 
-#main #top i{
-    font-size: 25px;
-    font-weight: 600;
-    cursor: pointer;
+#playListGaana div i {
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 6px;
 }
-#card #image{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
+#playListGaana div span p {
+  letter-spacing: 1px;
+  word-spacing: 0.5px;
+  padding: 6px;
 }
-#card #image img{
-    border-radius: 50%;
-    margin: 10px;
-    width: 180px;
-    height: 180px;
-    border: 3px solid white;
-    object-fit: cover;
-    object-position: center;
-    animation: rotate 8.5s linear infinite;
-}
-
-@keyframes rotate {
-    from{
-     transform: rotate(0deg);
-    }
-    to{
-          transform: rotate(360deg);
-    }
-}
-#songDescription{
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-#songDescription h1{
-    padding: 5px;
-    font-weight: 600;
-}
-#songDescription h4{
-    padding: 5px;
-    font-weight: 300;
-}
-#controller{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-}
-
-
-
-
-#controls{
-    width: 100%;
-    padding-left:18px;
-    padding-right: 18px;
+#playListGaana div span{
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+
 }
-#rangeContainer{
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#playListGaana div span img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 2px;
+}
+
+#card {
+  width: 350px;
+  background: #070f4e;
+  color: white;
+  border-radius: 20px;
+  display: none;
+}
+#card #top {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+#main #top i {
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+#card #image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+#card #image img {
+  border-radius: 50%;
+  margin: 10px;
+  width: 180px;
+  height: 180px;
+  border: 3px solid white;
+  object-fit: cover;
+  object-position: center;
+  animation: rotate 8.5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#songDescription {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#songDescription h1 {
+  padding: 5px;
+  font-weight: 600;
+}
+#songDescription h4 {
+  padding: 5px;
+  font-weight: 300;
+}
+#controller {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#controls {
+  width: 100%;
+  padding-left: 18px;
+  padding-right: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#rangeContainer {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#controller input {
+  cursor: pointer;
+  width: 90%;
+  appearance: none;
+  height: 3px;
+  border-radius: 10px;
+  background: white;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+#controller input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border-radius: 50%;
+  background-color: black;
+  width: 18px;
+  height: 18px;
+  border: 3px solid white;
+}
+#audioContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+#audioContainer i {
+  color: white;
+  font-size: 30px;
+  padding: 5px;
+}
+#audioContainer #audioRange {
+  width: 150px;
+  height: 2px;
+  border-radius: 20px;
+  background: linear-gradient(
+    to right,
+    grey 0%,
+    grey 50%,
+    white 50%,
+    white 100%
+  );
+}
+#audioContainer #audioRange::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: black;
+}
+#controls i {
+  font-size: 30px;
+  cursor: pointer;
+}
+#like {
+  font-size: 35px;
+  transition: opacity 0.2s linear, color 0.2s linear;
+}
+i#playPause {
+  font-size: 60px;
+  font-weight: 600;
+  color: white;
+  /* border: 2px solid blue; */
+}
+.red {
   
-}
-#controller input{
-    cursor: pointer;
-    width: 90%;
-    appearance: none;
-    height: 3px;
-    border-radius: 10px;
-    background: white;
-    margin-top: 10px;
-    margin-bottom: 8px;
-   
-   
-    
-}
-
-#controller input::-webkit-slider-thumb{
- -webkit-appearance: none;
-    border-radius: 50%;
-    background-color: black;
-    width: 18px;
-    height: 18px;
-    border: 3px solid white;
-
-}
-#audioContainer{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-#audioContainer i{
-
-    color: white;
-    font-size: 30px;
-    padding: 5px;
-}
-#audioContainer #audioRange{
-    width: 150px;
-    height: 2px;
-    border-radius: 20px;
-    background:linear-gradient(to right , grey 0%,grey 50%,white 50%,white 100% );
-  }
-  #audioContainer #audioRange::-webkit-slider-thumb{
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 2px solid white;
-    background-color: black;
-
-  }
-#controls i{
-    font-size: 30px;
-    cursor: pointer;
-}
-#like{
-    font-size: 35px;
-    transition: opacity 0.2s linear,color 0.2s linear;
-}
-i#playPause{
-    font-size: 60px;
-    font-weight: 600;
-    color: white;
-    /* border: 2px solid blue; */
-}
-.red{
-    opacity: 0.7;
-    color: red;
+  color: red;
 }

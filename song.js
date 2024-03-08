@@ -13,6 +13,10 @@ let cross = document.getElementById("cross");
 let playlist = document.getElementById("playlist");
 let songPlayList = document.getElementById("songPlayList");
 let card = document.getElementById("card");
+let playListGaana = document.getElementById("playListGaana");
+let songTitle = document.getElementById("songTitle");
+let songArtist = document.getElementById("songArtist");
+
 
 
 let songs = [
@@ -27,6 +31,8 @@ let images = [
   "https://e1.pxfuel.com/desktop-wallpaper/673/493/desktop-wallpaper-paint-splash.jpg",
  
 ];
+let names = ["Bezzati","Husnpari","Iraaday"];
+let singers = ["Khullar Ji","UK Bhai","Abdul Haasan"];
 
 
 
@@ -46,6 +52,8 @@ playPause.addEventListener("click", function () {
   if (player.paused) {
     player.src = songs[index];
     image.src = images[index];
+    songTitle.textContent = `${names[index]}`
+    songArtist.textContent = `${singers[index]}`
 
     player.play();
     playPause.classList.remove("ri-play-fill");
@@ -61,10 +69,14 @@ player.addEventListener("ended", function () {
   index = index + 1;
   if (index > length - 1) {
     index = 0;
+    songTitle.textContent = `${names[index]}`
+    songArtist.textContent = `${singers[index]}`
     player.src = songs[index];
     image.src = images[index];
     player.play();
   } else {
+    songTitle.textContent = `${names[index]}`
+    songArtist.textContent = `${singers[index]}`
     player.src = songs[index];
     image.src = images[index];
     player.play();
@@ -75,10 +87,14 @@ function nextSong() {
   index = index + 1;
   if (index > length - 1) {
     index = 0;
+    songTitle.textContent = `${names[index]}`
+    songArtist.textContent = `${singers[index]}`
     player.src = songs[index];
     image.src = images[index];
     player.play();
   } else {
+    songTitle.textContent = `${names[index]}`
+    songArtist.textContent = `${singers[index]}`
     player.src = songs[index];
     image.src = images[index];
     player.play();
@@ -90,10 +106,14 @@ function backSong() {
 
   if (index < 0) {
     index = length - 1;
+    songTitle.textContent = `${names[index]}`
+    songArtist.textContent = `${singers[index]}`
     player.src = songs[index];
     image.src = images[index];
     player.play();
   } else {
+    songTitle.textContent = `${names[index]}`
+    songArtist.textContent = `${singers[index]}`
     player.src = songs[index];
     image.src = images[index];
     player.play();
@@ -142,4 +162,39 @@ audioRange.addEventListener("input", function () {
   let progressAudio = audioValue * 100;
   console.log(progressAudio);
   audioRange.style.background = `linear-gradient(to right, grey 0%, grey ${progressAudio}%, white ${progressAudio}%, white 100%)`;
+});
+
+for(let i=1; i<= length; i++){
+  let newDiv =  document.createElement("div");
+
+  newDiv.classList.add("item");
+  newDiv.innerHTML =`<span> <img src =${images[i-1]}><p>${names[i-1]}</p></span> <i class="ri-play-fill playGaana" ></i>`
+  playListGaana.appendChild(newDiv);
+  
+}
+let playGaana = document.querySelectorAll(".playGaana");
+console.log(playGaana);
+playGaana.forEach((i,number) => {
+ 
+  i.addEventListener("click",function(){
+console.log(number);
+    playlist.style.display = "none";
+    card.style.display = "block";
+    songTitle.textContent = `${names[number]}`
+    songArtist.textContent = `${singers[number]}`
+    if (player.paused) {
+      player.src = songs[number];
+      image.src = images[number];
+  
+      player.play();
+      playPause.classList.remove("ri-play-fill");
+      playPause.classList.add("ri-pause-fill");
+    } else {
+      player.pause();
+      playPause.classList.remove("ri-pause-fill");
+      playPause.classList.add("ri-play-fill");
+    }
+  
+  })
+  
 });
