@@ -17,7 +17,7 @@ let playListGaana = document.getElementById("playListGaana");
 let songTitle = document.getElementById("songTitle");
 let songArtist = document.getElementById("songArtist");
 
-
+console.log(like.classList.contains("red"));
 
 let songs = [
   "1.mp3",
@@ -31,6 +31,7 @@ let images = [
   "https://e1.pxfuel.com/desktop-wallpaper/673/493/desktop-wallpaper-paint-splash.jpg",
  
 ];
+
 let names = ["Bezzati","Husnpari","Iraaday"];
 let singers = ["Khullar Ji","UK Bhai","Abdul Haasan"];
 
@@ -69,12 +70,19 @@ player.addEventListener("ended", function () {
   index = index + 1;
   if (index > length - 1) {
     index = 0;
+    if(like.classList.contains("red")){
+      like.click();
+     
+    }
     songTitle.textContent = `${names[index]}`
     songArtist.textContent = `${singers[index]}`
     player.src = songs[index];
     image.src = images[index];
     player.play();
   } else {
+    if(like.classList.contains("red")){
+      like.click();
+    }
     songTitle.textContent = `${names[index]}`
     songArtist.textContent = `${singers[index]}`
     player.src = songs[index];
@@ -86,6 +94,11 @@ player.addEventListener("ended", function () {
 function nextSong() {
   index = index + 1;
   if (index > length - 1) {
+    if(like.classList.contains("red")){
+      console.log(like.classList.contains("red"));
+      like.click();
+      console.log(like.classList.contains("red"));
+    }
     index = 0;
     songTitle.textContent = `${names[index]}`
     songArtist.textContent = `${singers[index]}`
@@ -93,6 +106,11 @@ function nextSong() {
     image.src = images[index];
     player.play();
   } else {
+    if(like.classList.contains("red")){
+      console.log(like.classList.contains("red"));
+      like.click();
+      console.log(like.classList.contains("red"));
+    }
     songTitle.textContent = `${names[index]}`
     songArtist.textContent = `${singers[index]}`
     player.src = songs[index];
@@ -105,6 +123,9 @@ function backSong() {
   index = index - 1;
 
   if (index < 0) {
+    if(like.classList.contains("red")){
+      like.click();
+    }
     index = length - 1;
     songTitle.textContent = `${names[index]}`
     songArtist.textContent = `${singers[index]}`
@@ -112,6 +133,9 @@ function backSong() {
     image.src = images[index];
     player.play();
   } else {
+    if(like.classList.contains("red")){
+      like.click();
+    }
     songTitle.textContent = `${names[index]}`
     songArtist.textContent = `${singers[index]}`
     player.src = songs[index];
